@@ -1,4 +1,3 @@
-
 import static org.junit.Assert.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
@@ -17,11 +16,11 @@ public class TropaTest {
         Tropa tanque1 = new Tropa("tanque1", 1, 2.0f);
         Tropa soldado1 = new Tropa("soldado1", 1, 1.0f);
         Escudo escudo = new Escudo();
-        //A este testeo le falta asignarle tier al objeto escudo
+        escudo.setDefensa0();
         tanque1.atacar(soldado1, escudo);
-        assertEquals(0.50f, soldado1.getVida(), 0.0f);
+        assertEquals(0.050000012f, soldado1.getVida(), 0.00f);
         tanque1.atacar(soldado1, escudo);
-        assertEquals(0.0f, soldado1.getVida(), 0.0f);
+        assertEquals(-0.9f, soldado1.getVida(), 0.0f);
     }
 
     @Test 
@@ -34,6 +33,7 @@ public class TropaTest {
         //assertEquals(2.65f, buque.getVida(),0.00f);
         tanque.atacar(buque, escudo);
         tanque.atacar(buque, escudo);
+        assertEquals(1.3500001f, buque.getVida(),0.00f);
     }
 
     @Test
