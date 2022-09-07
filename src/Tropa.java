@@ -1,10 +1,10 @@
 
 public class Tropa {
     private String nombre;
-    private int daño;
+    private Float daño;
     private float vida;
     private float vidaQuitada;
-    public Tropa(String nombre, int daño, Float vida) {
+    public Tropa(String nombre, Float daño, Float vida) {
         this.setNombre(nombre);
         this.setDaño(daño);
         this.setVida(vida);
@@ -16,10 +16,10 @@ public class Tropa {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    public int getDaño() {
+    public Float getDaño() {
         return daño;
     }
-    public void setDaño(int daño) {
+    public void setDaño(Float daño) {
         this.daño = daño;
     }
     public float getVida() {
@@ -29,15 +29,15 @@ public class Tropa {
         this.vida = vida;
     }
     
-    public void atacar(Tropa enemigo, Escudo escudo) {
+    public void atacar(Tropa enemigo, Escudo escudo, float damage) {
         if(this.verificarVida() == true && enemigo.verificarVida() == true){
             if (escudo != null) {
-                vidaQuitada = escudo.defensaXdano(this.getDaño());
+                vidaQuitada = escudo.defensaXdano(damage);
                 enemigo.setVida(enemigo.getVida() - vidaQuitada);
             }
             else {
                 // transformar el daño a float
-                vidaQuitada = (float) this.getDaño();
+                vidaQuitada = damage;
                 
                 enemigo.setVida(enemigo.getVida() - vidaQuitada);
             }
@@ -59,5 +59,10 @@ public class Tropa {
             return true;
         }
     }
+
     
+    public String imprimir(){
+
+        return " Nombre: "+this.getNombre()+" Vida: "+this.getVida()+" Daño: "+this.getDaño()+" ";
+    }
 }

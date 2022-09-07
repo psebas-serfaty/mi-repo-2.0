@@ -18,7 +18,7 @@ public class Escudo {
         this.defense = 0.55f;
 
     }
-    public float defensaXdano(int damage){
+    public float defensaXdano(Float damage){
         return (float) this.getDefense()*damage;
     }
 
