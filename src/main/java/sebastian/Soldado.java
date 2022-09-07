@@ -1,3 +1,4 @@
+package sebastian;
 public class Soldado extends Tropa {
     private Cuchillo cutuCuchillo;
     private Ametralladora boomStick;

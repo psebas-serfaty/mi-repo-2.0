@@ -1,4 +1,4 @@
-
+package sebastian;
 public class Tropa {
     private String nombre;
     private Float daño;

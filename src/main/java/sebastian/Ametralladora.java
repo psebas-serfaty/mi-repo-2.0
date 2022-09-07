@@ -1,3 +1,4 @@
+package sebastian;
 public class Ametralladora extends ArmaBase {
     private int municion;
 

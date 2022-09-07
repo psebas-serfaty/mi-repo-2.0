@@ -1,3 +1,4 @@
+package sebastian;
 public class Buque extends Veiculos {
     private Soldado conductor;
     public Buque(String nombre, Float daño, Float vida, Soldado conductor) {

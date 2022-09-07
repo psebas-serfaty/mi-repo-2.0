@@ -1,3 +1,4 @@
+package sebastian;
 public abstract class ArmaBase {
     private String nombre;
     private float danio;
